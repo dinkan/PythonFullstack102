@@ -1,0 +1,21 @@
+{% extends "mastertemplate.html" %}
+
+{% block title %}
+Update the details of {{ thisstudent.name }}
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Update the details of {{ thisstudent.name }} </h1>
+<form action="/updatesub/{{thisstudent.id}}" method="post">
+    {% csrf_token %}
+<input type="text" name="rollnumber" id="rollnumber" value="{{ thisstudent.rollnumber }}">
+<input type="text" name="name" id="name" value="{{ thisstudent.name }}">
+
+<input type="submit" value="Update">
+</form>
+<HR>
+<p>Back to <a href="/students">Student List</a></p>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "mastertemplate.html" %}
+
+{% block title %}
+Add a new student details
+{% endblock %}
+
+
+{% block content %}
+<h1>Create a new Entry</h1>
+<form action="/createsub" method="post">
+    {% csrf_token %}
+<input type="text" name="rollnumber" id="rollnumber" value="{{ thisstudent.rollnumber }}">
+<input type="text" name="name" id="name" value="{{ thisstudent.name }}">
+
+<input type="submit" value="Create">
+</form>
+
+<HR>
+<p>Back to <a href="/students">Student List</a></p>
+
+{% endblock %}

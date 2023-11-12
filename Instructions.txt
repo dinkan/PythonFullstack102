@@ -1,0 +1,52 @@
+Set up 1:
+---------
+
+After downloading the application, execute the following steps.
+
+1.From Command Prompt, go to the project folder
+
+2.Create a virtual environment using the following command
+
+python -m venv venv
+
+3. Activate the virtual environment :
+
+venv\Scripts\activate.bat
+
+4. Install dependencies defined in the requirements.txt file
+
+python -m pip install -r requirements.txt
+
+5. change the directory my school and execute migration command
+
+cd myschool
+python manage.py migrate
+
+6. Start the server 
+python manage.py runserver
+
+7. Open the link in browser
+http://127.0.0.1:8000/students
+
+
+Set up 2:
+---------
+For the successive Runs
+
+1.From Command Prompt, go to the project folder
+
+2. Activate the virtual environment :
+venv\Scripts\activate.bat
+
+3. change to the project directory and execute migration command
+
+4. In case of any data model changes run the following statements.
+python manage.py makemigrations polls
+python manage.py migrate
+
+5. Start the server 
+python manage.py runserver
+
+6. Open the link in browser
+http://127.0.0.1:8000/students
+

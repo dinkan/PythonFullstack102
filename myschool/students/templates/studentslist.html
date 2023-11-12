@@ -1,0 +1,31 @@
+{% extends "mastertemplate.html" %}
+
+{% block title %}
+  List of all students
+{% endblock %}
+
+
+{% block content %}
+  <h1>Students List</h1>
+  
+    {% if studentlist.all %}
+    <table>
+      <thead>
+        <th>Number</th><th>Name of the Student</th><th>More</th>
+      </thead>
+    
+    {% for x in studentlist %}
+      <tr><td>{{ x.rollnumber }}</td><td> {{ x.name }}</td>
+        <td><a href="details/{{ x.id }}"> Details</a></td>
+        </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  Please click on the link below to add a student <BR>
+  {% endif %}
+  
+  <HR>
+  <a href="create"> Add a new Student</a>
+    
+
+  {% endblock %}
